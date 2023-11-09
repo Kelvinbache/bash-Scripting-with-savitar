@@ -1,0 +1,42 @@
+comando que podemos ver la ip del internet
+hostname -I
+----------------------------------------------------------------------
+truco para leer guiones
+cat ./-  |----> esto te ahorra tiempo
+cat home/bandint1/-  |--> seria otra forma
+-------------------------------------------------------------------------
+para leer un archivo que tiene espacios
+cat "estoy separado por espacios" --> todo esta junto
+cat estoy \ separado \ por \ espacios \ pega todo 
+cat sp* -*--> inicia con estas letras pero busca el resto de palabras
+cat *ame ---> buscar por las ultimas palabras de la oraccions
+cat $(pwd)/* ---> muestrame todo que esta dentro del usuario
+cat *
+cat $(find . -name -file07) ---> muestrame la informacion que tiene este fichero 
+-----------------------------------------------------------------------------
+ver directorios ocultos 
+ls -a archivo/ ---> ver un archivo oculto
+find .  ---> muestra todos los archivos que hay incluyendo los ocultos
+find . -type f ---> solo muestra los archivos
+find . -type f -printf "%f\t%p\t%u\t%g\t%m\n" | column -t ---> quiere decir muestrame la carpeta que estan los archivos, el permiso que tienen y ordendame todo
+find . -name .hidden | xargs cat --> buscar esta carpeta y muestrame que tiene dentro de ella
+find . -type f | xargs file --> muestras las caracteristicas de cada archivo
+-----------------------------------------------------------------------------------
+saber con que arhivos estamos tratando
+file ---> muestra las caracteristicas del archivo
+
+------------------------------------------------------------------------------
+modificar el funcionamiento de un archivo
+chmod o+rw archivo.extencion ---> estamos modificando los grupos de permisos
+chmod o-rw archivo.txt ---> estamos denegando los permisos de lectura y escritura
+chgrp kelvin archivo.txt ---> poder decinar los permiso a una persona 
+
+-------------------------------------------------------------------------------------
+flatss
+chatrr - i -v archivo.txt --> quitando los permisos especiales al archivo
+chatrr +i -v archivo.txt ---> poniendo un permiso especiar al archivo
+lsattr ---> para ver los permisos sobre el archivo
+
+-----------------------------------------------------------------------------------
+time --> tiempo de ejecucion de comandos
+
