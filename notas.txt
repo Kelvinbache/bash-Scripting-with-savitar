@@ -13,6 +13,8 @@ cat *ame ---> buscar por las ultimas palabras de la oraccions
 cat $(pwd)/* ---> muestrame todo que esta dentro del usuario
 cat *
 cat $(find . -name -file07) ---> muestrame la informacion que tiene este fichero 
+cat data.txt | grep "palabra clave" ---> busca por esta agrupacion
+cat data.txt | awk "/palabra clave/" ---> busca por esta agrupacion
 -----------------------------------------------------------------------------
 ver directorios ocultos 
 ls -a archivo/ ---> ver un archivo oculto
@@ -21,6 +23,9 @@ find . -type f ---> solo muestra los archivos
 find . -type f -printf "%f\t%p\t%u\t%g\t%m\n" | column -t ---> quiere decir muestrame la carpeta que estan los archivos, el permiso que tienen y ordendame todo
 find . -name .hidden | xargs cat --> buscar esta carpeta y muestrame que tiene dentro de ella
 find . -type f | xargs file --> muestras las caracteristicas de cada archivo
+find . -type f -readable -executable -size 1003c ==> sirve para encontrar un archivo expecifico
+find / -user  bandit7 -grupos bandit6  -size 33c 2>/dev/null | xargs cat --> estamos leyendo en otro direccion
+
 -----------------------------------------------------------------------------------
 saber con que arhivos estamos tratando
 file ---> muestra las caracteristicas del archivo
@@ -40,3 +45,15 @@ lsattr ---> para ver los permisos sobre el archivo
 -----------------------------------------------------------------------------------
 time --> tiempo de ejecucion de comandos
 
+------------------------------------------------------------
+redirrigir errores 
+
+fireFox > /dev/null > 2>&1 ---> estamos redigiendo los errores a otro lugar
+
+fireFox > /dev/null > 2>&1 & ---> estamos redigiendo los errores a otro lugar y poniendo un aplicacion ene segundo plano
+---------------------------------------------------------
+quiere leer las lineas de un documento
+
+cat data.txt | wc -l ---> estamos diciendo que cuente cuantas lineas hay en un txt
+-------------------------------------------------------------
+grep "palabra clave" documento.txt ------> estamos diceindo que busque la aprupacion, que esta a lado de esta palabra clave
